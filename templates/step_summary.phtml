@@ -1,0 +1,46 @@
+                <div class="col-xs-12">
+                    <div class="col-md-12">
+                        <div id="summary_missing_data" class="alert alert-danger" style="display:none;">
+                            <?php echo $this->t('Please note: You have not set all mandatory options. Go back to the appropriate step to add missing data. The missing options are highlighted below.'); ?>
+                        </div>
+                        <div class="alert alert-secondary">
+                            <?php echo $this->t('Please check your settings before you start the installation.') ?>
+                        </div>
+
+                        <table class="table" id="summarytable">
+                            <thead>
+                                <tr>
+                                    <th><?php echo $this->t("Option") ?></th>
+                                    <th><?php echo $this->t("Value") ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <?php echo $this->t('path') ?>
+                                    </td>
+                                    <td>
+                                        <span id="path"></span>
+<?php if($this->data['error_path_exists']===true): ?>
+                                        <div class="alert alert-danger">
+                                            <?php echo $this->t('The directory is not empty!') ?>
+                                        </div>
+<?php endif; ?>
+                                    </td></tr>
+                                <tr><td><?php echo $this->t('sitepath') ?></td><td><span id="sitepath"></span></td></tr>
+                                <tr><td><?php echo $this->t('sitename') ?></td><td><span id="sitename"></span></td></tr>
+                                <tr><td><?php echo $this->t('db_hostname') ?></td><td><span id="db_hostname"></span></td></tr>
+                                <tr><td><?php echo $this->t('db_name') ?></td><td><span id="db_name"></span></td></tr>
+                                <tr><td><?php echo $this->t('db_username') ?></td><td><span id="db_username"></span></td></tr>
+                                <tr><td><?php echo $this->t('db_password') ?></td><td><span id="db_password"></span></td></tr>
+<?php if($this->mode=='advanced'): ?>
+                                <tr><td><?php echo $this->t('db_port') ?></td><td><span id="db_port"></span></td></tr>
+                                <tr><td><?php echo $this->t('db_prefix') ?></td><td><span id="db_prefix"></span></td></tr>
+<?php endif; ?>
+                                <tr><td><?php echo $this->t('admin_username') ?></td><td><span id="admin_username"></span></td></tr>
+                                <tr><td><?php echo $this->t('admin_password') ?></td><td><span id="admin_password"></span></td></tr>
+                                <tr><td><?php echo $this->t('admin_email') ?></td><td><span id="admin_email"></span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>

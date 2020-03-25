@@ -1,0 +1,38 @@
+              <form id="admin_account">
+                <input type="hidden" name="proceed" value="1" />
+                <div class="alert alert-secondary">
+                    <?php echo $this->t('All settings on this page can be changed in the admin backend later!') ?>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-sm-2 col-form-label"><?php echo $this->t('Admin user') ?></label>
+                    <div class="col-sm-10">
+                        <input aria-describedby="auserHelpBlock" type="text" name="admin_username" id="admin_username" required="required" class="form-control" placeholder="<?php echo $this->t('Please choose a username for the admin user') ?>" value="<?php echo ( isset($data['admin_username']) ? $data['admin_username'] : '' ); ?>" />
+                        <small id="auserHelpBlock" class="form-text text-muted"><?php echo $this->t("You may use your eMail address here if you wish. You should avoid to use login names that are easy to guess, like 'admin' or 'root'.") ?></small>
+                        <div class="invalid-feedback"><?php echo $this->t('Please choose a username for the admin user') ?></div>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-sm-2 col-form-label" for="admin_password"><?php echo $this->t('Password') ?></label>
+                    <div class="col-sm-10">
+                        <input aria-describedby="upasswHelpBlock" type="password" data-match="#admin_password_repeat" name="admin_password" id="admin_password" required="required" class="form-control" placeholder="" data-toggle="popover" value="<?php echo ( isset($data['admin_password']) ? $data['admin_password'] : '' ); ?>" />
+                        <small id="upasswHelpBlock" class="form-text text-muted"><?php echo $this->t('The password of the admin user you entered above. A good password should be at least 8 characters long and contain upper-/lowercase letters, digits, and special characters.') ?></small>
+                        <div class="invalid-feedback"><?php echo $this->t('Please enter a password.') ?></div>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-sm-2 col-form-label"><?php echo $this->t('Repeat password') ?></label>
+                    <div class="col-sm-10">
+                        <input aria-describedby="apasswrepHelpBlock" type="password" data-match="#admin_password" name="admin_password_repeat" id="admin_password_repeat" required="required" class="form-control" placeholder="" data-toggle="popover" value="<?php echo ( isset($data['admin_password_repeat']) ? $data['admin_password_repeat'] : '' ); ?>" />
+                        <small id="apasswrepHelpBlock" class="form-text text-muted"><?php echo $this->t('Please repeat the password. This will avoid lock-outs if you mistyped your password.') ?></small>
+                        <div class="invalid-feedback"><?php echo $this->t('Please repeat the password.') ?></div>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-sm-2 col-form-label"><?php echo $this->t('eMail address') ?></label>
+                    <div class="col-sm-10">
+                        <input aria-describedby="aemailHelpBlock" type="email" name="admin_email" id="admin_email" required="required" class="form-control" placeholder="<?php echo $this->t('Please enter a valid eMail address') ?>" value="<?php echo ( isset($data['admin_email']) ? $data['admin_email'] : '' ); ?>" />
+                        <small id="aemailHelpBlock" class="form-text text-muted"><?php echo $this->t('The eMail address will not be posted anywhere, but you may need it if you forget your login credentials.') ?></small>
+                        <div class="invalid-feedback"><?php echo $this->t('Please enter a valid eMail address') ?></div>
+                    </div>
+                </div>
+              </form>

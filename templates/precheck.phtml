@@ -1,0 +1,62 @@
+        <div class="row vertical-center-row">
+            <div class="col-center-block welcome-widget">
+                <h1><?php include 'name.phtml'; ?> Installer</h1>
+<?php if(count($this->errors)>0): ?>
+                <div class="alert alert-danger">
+                    <span class="fa fa-warning"></span>
+                    <?php echo $this->t('Pre-installation check(s) failed!') ?>
+                </div>
+                <?php echo $this->t('Sorry, but we encountered some issue(s) that will inhibit the installation.') ?>
+                <?php echo $this->t('Please check the results below and fix the issue(s) listed there.') ?>
+                <?php echo $this->t('If you need help, please <a href="">visit our forum</a>.') ?><br /><br />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><?php echo $this->t('Check') ?></th>
+                            <th><?php echo $this->t('Required') ?></th>
+                            <th><?php echo $this->t('Actual') ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<?php foreach($this->errors as $error): ?>
+                        <tr>
+                            <td><?php echo $error['check'] ?></td>
+                            <td><?php echo $error['required'] ?></td>
+                            <td><?php echo $error['actual'] ?></td>
+                        </tr>
+<?php endforeach; ?>
+                    </tbody>
+                </table>
+<?php endif; ?>
+
+<?php if(count($this->warnings)>0): ?>
+                <div class="alert alert-warning">
+                    <span class="fa fa-warning"></span>
+                    <?php echo $this->t('Please note') ?>
+                </div>
+                <?php echo $this->t('Before you proceed, please take the following suggestions into account.') ?><br />
+                <?php echo $this->t('If you need help, please <a href="">visit our forum</a>.') ?><br /><br />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><?php echo $this->t('Check') ?></th>
+                            <th><?php echo $this->t('Suggestion') ?></th>
+                            <th><?php echo $this->t('Actual') ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<?php foreach($this->warnings as $warning): ?>
+                        <tr>
+                            <td><?php echo $warning['check'] ?></td>
+                            <td><?php echo $warning['suggestion'] ?></td>
+                            <td><?php echo $warning['actual'] ?></td>
+                        </tr>
+<?php endforeach; ?>
+                    </tbody>
+                </table>
+<?php endif; ?>
+<?php if(!count($this->errors)>0): ?>
+                <button class="btn btn-primary" onclick="window.location.href='<?php echo BASE_URL ?>?proceed'"><?php echo $this->t('Proceed anyway') ?></button>
+<?php endif; ?>
+            </div>
+        </div>

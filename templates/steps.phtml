@@ -1,0 +1,33 @@
+<?php
+    $width = ceil(100 / count($this->steps[$this->mode]));
+?>
+      <div class="progress-tracker-mobile">
+        <ul class="progress-tracker progress-tracker--text anim-path nav nav-tabs" role="tablist">
+<?php
+    foreach($this->steps[$this->mode] as $i => $label):
+?>
+          <li class="progress-step">
+            <a href="#<?php echo $label ?>" role="tab" data-toggle="tab" class="">
+              <span class="progress-marker<?php if($label==$this->current): ?> bg-warning<?php endif; if($i<$this->step): ?> bg-success<?php endif; ?>"></span>
+              <span class="progress-text<?php if($label==$this->current): echo ' text-warning'; else: echo ' text-muted'; endif;?>">
+                <div class="progress-title"><?php echo $this->t(ucfirst(str_replace('_',' ',$label))); ?></div>
+                <?php if(isset($this->step_info[$label])): echo $this->t($this->step_info[$label]); endif; ?>
+              </span>
+            </a>
+          </li>
+<?php $i++; endforeach; ?>
+        </ul>
+      </div>
+
+    <div class="tab-content">
+<?php
+    foreach($this->steps[$this->mode] as $i => $label): $i++;
+?>
+      <div role="tabpanel" class="tab-pane fade" id="<?php echo $label ?>" aria-expanded="false">
+<?php include dirname(__FILE__)."/step_$label.phtml"; ?>
+      </div>
+<?php endforeach; ?>
+    </div>
+
+<button class="btn btn-primary btn-block" id="next"><?php echo $this->t('Next') ?></button>
+

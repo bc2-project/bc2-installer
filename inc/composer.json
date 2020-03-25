@@ -1,0 +1,61 @@
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "bc2-project/bc2_engine",
+                "version": "0.2",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/bc2-project/bc2_engine/",
+                    "reference": "master",
+                    "options": {
+                        "symlink": false
+                    }
+                }
+            }
+        },
+        {
+			"type": "vcs",
+			"url": "https://github.com/webbird/assetic"
+		}
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "oomphinc/composer-installers-extender":"^1.1",
+        "bc2-project/bc2_engine":"*",
+        "ext-PDO": "*",
+		"ext-json": "*",
+		"lib-pcre": "*",
+		"ext-session": "*",
+        "chillerlan/php-qrcode": "dev-master",
+        "ckeditor/ckeditor": "dev-standard/latest",
+        "components/jquery": "*",
+        "components/jqueryui": "*",
+        "doctrine/common": "*",
+		"doctrine/dbal": "*",
+        "dwoo/dwoo": "dev-master",
+        "ezyang/htmlpurifier": "*",
+        "fortawesome/font-awesome": ">=5.8.1",
+        "james-heinrich/getid3": "*",
+        "matthiasmullie/minify": ">=1.2.41",
+        "monolog/monolog": ">=1.20.0 <2.0",
+        "mrclay/minify": "2.*",
+        "pclzip/pclzip": ">=2.8",
+        "php-ds/php-ds": "^1.2.0",
+        "robthree/twofactorauth": "^1.5",
+        "swiftmailer/swiftmailer": "^6.0",
+        "symfony/http-foundation": "*",
+        "twbs/bootstrap": "^4.1",
+        "verot/class.upload.php": "dev-master",
+        "webbird/assetic": ">=1.4",
+		"webbird/wblib3": "dev-master"
+    },
+    "extra": {
+        "installer-types": ["cat-engine","library","component"],
+        "installer-paths": {
+            "cat_engine/": ["bc2-project/bc2_engine","type:cat-engine"],
+            "cat_engine/CAT/vendor/{$vendor}/{$name}/": ["type:library","type:component"]
+        }
+    }
+}

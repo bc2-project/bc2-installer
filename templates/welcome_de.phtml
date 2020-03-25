@@ -1,0 +1,42 @@
+                <h1>Willkommen bei <?php include 'name.phtml'; ?>!</h1>
+
+                <p>Der <?php include 'name.phtml'; ?> Installation Wizard wird Sie durch den Installationsprozess führen.</p>
+
+                <p><?php include 'name.phtml'; ?> ist mit der GNU General Public License (GPL) lizensiert. Bitte
+                <a href="gpl-3.0-standalone.html" class="dlg" title="GNU General Public License v3.0">lesen Sie die Lizenzbedingungen</a>,
+                bevor Sie mit der Installation fortfahren.</p>
+
+                <h2>Bitte wählen Sie den Installationsmodus</h2>
+                
+                <ul class="nav nav-pills nav-fill" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="simple-tab" href="#simple" role="tab" data-toggle="tab" aria-controls="simple" aria-selected="true">Einfach</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="adv-tab" href="#adv" role="tab" data-toggle="tab" aria-controls="adv" aria-selected="false">Experte</a>
+                    </li>
+                </ul><br /><br />
+
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="simple" aria-labelledby="simple-tab">
+                        Im einfachen Modus werden nur die notwendigsten Optionen angeboten. Der einfache Modus ist eine gute Wahl wenn:<br /><br />
+                        <ol>
+                            <li>dies das erste Mal ist, daß Sie <?php include 'name.phtml'; ?> installieren, und Sie nicht mit allen Einstellmöglichkeiten konfrontiert (und vielleicht verwirrt) werden wollen;</li>
+                            <li>Sie bereits mit <?php include 'name.phtml'; ?> vertraut sind, aber die Installation schnellstmöglich durchführen möchten</li>
+                        </ol><br />
+                        <div class="alert alert-secondary" role="alert">Der Installer wird in diesem Fall sinnvolle Voreinstellungen vornehmen.</div>
+                        <a href="?simple&proceed" class="btn btn-primary btn-block">Installation im einfachen Modus starten</a>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="adv" aria-labelledby="adv-tab">
+                        Der Experten-Modus ist eine gute Wahl wenn:<br /><br />
+                        <ol>
+                            <li>Sie sich bereits auskennen und alle verfügbaren Optionen sehen und bearbeiten möchten</li>
+                            <li>Sie die Voreinstellungen aller Optionen sehen möchten</li>
+                        </ol><br />
+                        <div class="alert alert-secondary" role="alert">In diesem Modus können die meisten Voreinstellungen bearbeitet werden.</div>
+                        <a href="?advanced&proceed" class="btn btn-primary btn-block">Installation im Experten-Modus starten</a>
+                    </div>
+                </div>
+
+

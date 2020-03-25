@@ -1,0 +1,37 @@
+                <div class="col-xs-12">
+                    <div class="col-md-12">
+                        <div class="alert alert-secondary" id="installation_in_progress" style="min-height:80px;">
+                            <div class="spinner">
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                                <div class="spinner-blade"></div>
+                            </div>
+                            <?php echo $this->t('Installation in progress, please wait...') ?><br />
+                        </div>
+
+                        <div class="alert alert-secondary" id="installation_progress">
+                            <strong><?php echo $this->t('Progress') ?></strong><br /><br />
+                            <span id="progress"></span>
+                        </div>
+
+                        <div class="alert alert-danger" id="installation_error" style="display:none">
+                            <?php echo $this->t('Sorry, the installation seems to have failed. Please see the error message(s) below.') ?><br />
+                        </div>
+                        <div class="alert alert-warning" id="installation_warning" style="display:none">
+                            <?php echo $this->t('The maximum wait time is exceeded. This is *not* necessarily an error.') ?>
+
+                        </div>
+                        <div class="alert alert-success" id="installation_success" style="display:none">
+                            <?php echo $this->t('Congratulations! You\'ve managed to install BlackCat CMS!') ?>
+                        </div>
+                    </div>
+                </div>

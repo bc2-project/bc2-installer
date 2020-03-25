@@ -1,0 +1,15 @@
+;<?php
+;die(); // For further security
+;/*
+
+[CAT_DB]
+TYPE=mysql
+HOST=%%db_host%%
+PORT=%%db_port%%
+USERNAME=%%db_user%%
+PASSWORD="%%db_password%%"
+NAME=%%db_name%%
+PREFIX=%%db_prefix%%
+
+;*/
+;?>

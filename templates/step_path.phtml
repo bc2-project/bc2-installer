@@ -1,0 +1,67 @@
+        <form id="path">
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label"><?php echo $this->t('Engine / Installation path') ?></label>
+                <div class="col-sm-10">
+                    <input type="text" name="path" id="path" required="required" aria-describedby="pathHelpBlock" class="input-sm form-control" value="<?php echo $data['path'] ?>" placeholder="<?php echo $this->t('Example: /abs/path/to/cat_engine') ?>" />
+                    <small id="pathHelpBlock" class="form-text text-muted">
+                        <?php echo $this->t('This is the installation folder of the CMS (=the directory where BlackCat CMS will be <strong>installed</strong>). Please use an absolute path here. This <strong>can</strong> and <strong>should</strong> be outside your public WWW folder.') ?>
+                    </small>
+<?php if($this->data['error_path_exists']===true): ?>
+                                        <div class="alert alert-danger">
+                                            <?php echo $this->t('The directory is not empty!') ?>
+                                        </div>
+<?php endif; ?>
+                </div>
+            </div>
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label"><?php echo $this->t('First site path') ?></label>
+                <div class="col-sm-10">
+                    <input type="text" name="sitepath" id="sitepath" required="required" aria-describedby="sitepathHelpBlock" class="input-sm form-control" value="<?php echo $data['sitepath'] ?>" placeholder="<?php echo $this->t('Example: /abs/path/to/htdocs') ?>" />
+                    <small id="sitepathHelpBlock" class="form-text text-muted">
+                        <?php echo $this->t('This is the target folder of the first site. Please use an absolute path here. This <strong>must</strong> be <strong>inside</strong> your public WWW folder.') ?>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label"><?php echo $this->t('First site folder name') ?></label>
+                <div class="col-sm-10">
+                    <input type="text" name="sitename" id="sitename" aria-describedby="sitenameHelpBlock" class="input-sm form-control" />
+                    <small id="sitepathHelpBlock" class="form-text text-muted">
+                        <?php echo $this->t('If you leave this blank, the site data will be placed directly into the "First site path" entered above. If you enter a folder name, the installation will place the data into &lt;First site path&gt;/&lt;Folder name&gt;.') ?>
+                    </small>
+                </div>
+            </div>
+
+<?php if($this->mode=='advanced' && isset($this->data['ssl_available']) && $this->data['ssl_available']): ?>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"><?php echo $this->t('Require SSL for the Admin Panel'); ?></label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="ssl" name="ssl" value="yes" <?php if(isset($this->data['ssl']) && $this->data['ssl']=='yes'): echo 'checked="checked"'; endif; ?> /> <?php echo $this->t('Yes') ?>
+                        </label>
+                    </div>
+                    <small id="sslHelpBlock" class="form-text text-muted">
+                        <?php echo $this->t('The installer has detected that SSL (=https) seems to be available on this host. We recommend to require it for backend access. This means that the login page will switch to https automatically.'); ?>
+                    </small>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"><?php echo $this->t('Require SSL for the Frontend (Sites)'); ?></label>
+                <div class="col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" id="ssl_fe" name="ssl_fe" value="yes" <?php if(isset($this->data['ssl']) && $this->data['ssl']=='yes'): echo 'checked="checked"'; endif; ?> /> <?php echo $this->t('Yes') ?>
+                        </label>
+                    </div>
+                    <small id="ssl_feHelpBlock" class="form-text text-muted">
+                        <?php echo $this->t('The installer has detected that SSL (=https) seems to be available on this host. We recommend to require it for the frontend, too.'); ?>
+                    </small>
+                </div>
+            </div>
+<?php endif; ?>
+        </form>
+
+        <div class="alert alert-secondary">
+            <?php echo $this->t('Please note: You are not asked to input an URL or Website title here, as BlackCat CMS is able to support several sites with only one installation. You will create your first site after the installation.') ?>
+        </div>

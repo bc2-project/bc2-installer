@@ -1,0 +1,256 @@
+{
+    "version": "2.0.0.5",
+    "modules": [
+        {
+            "name": "lib_dwoo",
+            "directory": "lib_dwoo",
+            "version": "1.0",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "Y",
+            "since": "03.03.2020",
+            "description": {
+                "en": {
+                    "title": "BC2 plugins / placeholders for the Dwoo template engine"
+                },
+                "de": {
+                    "title": "BC2 Plugins / Platzhalter für Dwoo Template Engine"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "lib_dwoo",
+                "master": "Y"
+            }
+        },{
+            "name": "wysiwyg",
+            "directory": "wysiwyg",
+            "version": "1.0",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "Y",
+            "since": "03.03.2020",
+            "description": {
+                "en": {
+                    "title": "WYSIWYG plugin for BC2"
+                },
+                "de": {
+                    "title": "WYSIWYG plugin für BC2"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "wysiwyg",
+                "master": "Y"
+            }
+        },{
+            "name": "Dashboard",
+            "directory": "coreDashboard",
+            "version": "2.0.0",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "Y",
+            "since": "24.02.2020",
+            "description": {
+                "en": {
+                    "title": "Contains the default dashboard widgets"
+                },
+                "de": {
+                    "title": "Beinhaltet die Standard-Dashboard-Widgets"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "bc2_coredashboard",
+                "master": "Y"
+            }
+        },{
+            "name": "Socialmedia Link Manager",
+            "directory": "coreSocialmedia",
+            "guid": "d3079e37-179a-4e79-ae69-3c454adc3594",
+            "version": "0.1",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "N",
+            "since": "31.10.2018",
+            "description": {
+                "en": {
+                    "title": "Manage your Social Media Services here"
+                },
+                "de": {
+                    "title": "Social Media Dienste verwalten"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "bc2_socialmedia",
+                "master": "Y"
+            }
+        },{
+            "name": "Visitor Statistics",
+            "directory": "coreVisitorStatistics",
+            "guid": "",
+            "version": "0.1",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "N",
+            "since": "24.02.2020",
+            "description": {
+                "en": {
+                    "title": "Show page impressions"
+                },
+                "de": {
+                    "title": "Seitenzugriffe anzeigen"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "bc2_visitorstatistics",
+                "master": "Y"
+            }
+        },{
+            "name": "Menu Manager",
+            "directory": "coreMenuAdmin",
+            "guid": "",
+            "version": "0.1",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "N",
+            "since": "31.10.2018",
+            "description": {
+                "en": {
+                    "title": "Manage your menus here"
+                },
+                "de": {
+                    "title": "Menüs verwalten"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "bc2_menuadmin",
+                "master": "Y"
+            }
+        },{
+            "name": "Default backend theme",
+            "directory": "backstrap",
+            "type":"theme",
+            "guid": "",
+            "version": "0.1",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "Y",
+            "required": "Y",
+            "since": "24.02.2020",
+            "description": {
+                "en": {
+                    "title": "Default Bootstrap and jQuery enhanced backend theme"
+                },
+                "de": {
+                    "title": "Standard-Backend auf Basis von Bootstrap und jQuery"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "bc2_backstraptheme",
+                "master": "Y"
+            }
+        },{
+            "name": "External Content",
+            "directory": "external_content",
+            "guid": "",
+            "version": "1.0",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "N",
+            "required": "N",
+            "since": "24.02.2020",
+            "description": {
+                "en": {
+                    "title": "Create a placeholder for external content like Google Maps and YouTube to protect user from being tracked"
+                },
+                "de": {
+                    "title": "Create a placeholder for external content like Google Maps and YouTube to protect user from being tracked"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "external_content",
+                "master": "Y"
+            }
+        },{
+            "name": "BotTrap",
+            "directory": "toolBotTrap",
+            "guid": "",
+            "version": "1.0",
+            "author": "BlackCat Development",
+            "license": "GNU General Public License",
+            "bundled": "N",
+            "required": "N",
+            "since": "25.03.2020",
+            "description": {
+                "en": {
+                    "title": "Block bad bots"
+                },
+                "de": {
+                    "title": "Böse Bots aussperren"
+                }
+            },
+            "require": {
+                "core": {
+                    "release": "2.x"
+                }
+            },
+            "github": {
+                "organization": "bc2-project",
+                "repository": "toolBotTrap",
+                "master": "Y"
+            }
+        }
+    ]
+}

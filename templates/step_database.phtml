@@ -1,0 +1,60 @@
+        <form class="needs-validation" novalidate id="database">
+            <div class="alert alert-secondary">
+                <?php echo $this->t('The database to be used must already be installed, and you must have a database admin user and password. If you are unsure what these terms mean you should probably contact your hosting provider.') ?>
+            </div>
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label" for="db_hostname">Hostname</label>
+                <div class="col-sm-10">
+                    <input aria-describedby="hostHelpBlock" type="text" name="db_hostname" id="db_hostname" required="required" class="input-sm form-control<?php if(isset($invalid['db_hostname'])): echo ' is-invalid'; endif; ?>" aria-describedby="HelpBlock" value="<?php echo ( isset($data['db_hostname']) ? $data['db_hostname'] : 'localhost' ); ?>" />
+                    <small id="hostHelpBlock" class="form-text text-muted"><?php echo $this->t('The IP Address / host name where the database is available.') ?></small>
+                    <div class="invalid-feedback"><?php echo $this->t('Please insert the name or IP address of the database server.') ?></div>
+                </div>
+            </div>
+<?php if($this->mode=='advanced'): ?>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="db_port">Port</label>
+                <div class="col-sm-10">
+                    <input aria-describedby="portHelpBlock" type="text" name="db_port" id="db_port" class="input-sm form-control" aria-describedby="HelpBlock" value="<?php echo ( isset($data['db_port']) ? $data['db_port'] : '3306' ); ?>" />
+                    <small id="portHelpBlock" class="form-text text-muted"><?php echo $this->t("Leave this as-is if you don't know what it is for. If you're using USBWebserver (Portable), set this to 3307.") ?></small>
+                </div>
+            </div>
+<?php endif; ?>
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label" for="db_name"><?php echo $this->t('Database name') ?></label>
+                <div class="col-sm-10">
+                    <input aria-describedby="nameHelpBlock" type="text" name="db_name" id="db_name" required="required" class="input-sm form-control<?php if(isset($invalid['db_hostname'])): echo ' is-invalid'; endif; ?>" aria-describedby="HelpBlock" placeholder="<?php echo $this->t('Example: cat') ?>" value="<?php echo ( isset($data['db_name']) ? $data['db_name'] : '' ); ?>" />
+                    <small id="nameHelpBlock" class="form-text text-muted"><?php echo $this->t('The name of the database where the tables are created.') ?></small>
+                    <div class="invalid-feedback"><?php echo $this->t('Please enter a valid database name.') ?></div>
+                </div>
+            </div>
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label" for="db_username"><?php echo $this->t('Admin user') ?></label>
+                <div class="col-sm-10">
+                    <input aria-describedby="userHelpBlock" type="text" name="db_username" id="db_username" required="required" class="input-sm form-control" aria-describedby="HelpBlock" placeholder="<?php echo $this->t('Example: dbuser123') ?>" value="<?php echo ( isset($data['db_username']) ? $data['db_username'] : '' ); ?>" />
+                    <small id="userHelpBlock" class="form-text text-muted"><?php echo $this->t('An admin user that is allowed to create tables.') ?></small>
+                    <div class="invalid-feedback"><?php echo $this->t('Please enter a database user name.') ?></div>
+                </div>
+            </div>
+            <div class="form-group row required">
+                <label class="col-sm-2 col-form-label" for="db_password"><?php echo $this->t('Password') ?></label>
+                <div class="col-sm-10">
+                    <input aria-describedby="pwHelpBlock" type="password" name="db_password" id="db_password" required="required" class="input-sm form-control" aria-describedby="HelpBlock" value="<?php echo ( isset($data['db_password']) ? $data['db_password'] : '' ); ?>" />
+                    <small id="pwHelpBlock" class="form-text text-muted"><?php echo $this->t('The password of the admin user you entered above.') ?></small>
+                    <div class="invalid-feedback"><?php echo $this->t('Please enter a database password.') ?></div>
+                </div>
+            </div>
+<?php if($this->mode=='advanced'): ?>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="db_prefix"><?php echo $this->t('Table prefix') ?></label>
+                <div class="col-sm-10">
+                    <input aria-describedby="prefixHelpBlock" type="text" name="db_prefix" id="db_prefix" required="required" class="input-sm form-control" aria-describedby="HelpBlock" placeholder="<?php echo $this->t('Example: cat_') ?>" value="<?php echo ( isset($data['db_prefix']) ? $data['db_prefix'] : 'bc2_' ); ?>" />
+                    <small id="prefixHelpBlock" class="form-text text-muted"><?php echo $this->t('The prefix will be used to distinguish the BlackCat CMS table names from other tables that may already exist in the database.') ?></small>
+                </div>
+            </div>
+<?php else: ?>
+            <div class="alert alert-secondary">
+                <?php echo $this->t('If you need to set a different database port (different from default port 3306) or table prefix (default will be "bc2_"), please <a href="%%url%%?advanced&proceed">restart the installer in Expert mode</a>.',array('%%url%%'=>BASE_URL)) ?>
+            </div>
+<?php endif; ?>
+
+        </form>

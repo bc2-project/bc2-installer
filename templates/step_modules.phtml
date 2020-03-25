@@ -1,0 +1,33 @@
+<?php
+if(isset($this->catalog['modules']) && is_array($this->catalog['modules']) && count($this->catalog['modules'])>0):
+?>
+        <form class="needs-validation" novalidate id="modules">
+            <div class="alert alert-secondary">
+                <?php echo $this->t('More modules and templates (skins) can be added later. Necessary modules cannot be excluded.') ?>
+            </div>
+            <table class="table table-sm">
+<?php
+    foreach ($this->catalog['modules'] as $i => $m):
+?>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="modlist_<?php echo $i ?>" value="<?php echo $this->catalog['modules'][$i]['name'] ?>"<?php if($this->catalog['modules'][$i]['bundled'] == 'Y'): ?> checked="checked"<?php if($this->catalog['modules'][$i]['required'] == 'Y'): ?> disabled<?php endif; endif; ?> />
+                    </td>
+                    <td>
+                        <?php echo $this->catalog['modules'][$i]['name'] ?>
+                    </td>
+                    <td>
+                        <i class="fa fa-puzzle"></i>
+                    </td>
+                    <td>
+                        <?php echo $this->catalog['modules'][$i]['description'] ?>
+                    </td>
+                </tr>
+<?php endforeach; ?>
+            </table>
+        </form>
+<?php else: ?>
+            <div class="alert alert-danger">
+                <?php echo $this->t('No modules in list, please make sure you have a catalog.json in the data-folder!') ?>
+            </div>
+<?php endif; ?>
